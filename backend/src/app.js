@@ -18,8 +18,12 @@ app.use(cookieParser());
 
 // Routes import
 import userRoutes from "./routes/user.routes.js";
+import sessionRoutes from "./routes/session.routes.js";
+import mysessionRoutes from "./routes/my-session.routes.js";
 
 // Routes setup
 app.use("/api/v1/users", userRoutes);
+app.use("/api/v1/sessions", sessionRoutes);
+app.use("/api/v1/my-sessions", mysessionRoutes);
 
 export default app;

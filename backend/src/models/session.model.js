@@ -13,7 +13,7 @@ const sessionSchema = new Schema(
         },
         tags: {
             type: [String],
-            required: true,
+            default: [],
         },
         json_file_url: {
             type: String,
