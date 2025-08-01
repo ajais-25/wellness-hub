@@ -2,11 +2,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { AuthProvider } from "./contexts/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Layout from "./components/Layout";
 
 // Lazy load all pages
 const Login = lazy(() => import("./pages/Login"));
 const Register = lazy(() => import("./pages/Register"));
 const Home = lazy(() => import("./pages/Home"));
+const Dashboard = lazy(() => import("./pages/Dashboard"));
 
 function App() {
   return (
@@ -27,7 +29,10 @@ function App() {
 
               {/* Protected routes with Layout */}
               <Route path="/" element={<ProtectedRoute />}>
-                <Route index element={<Home />} />
+                <Route element={<Layout />}>
+                  <Route index element={<Home />} />
+                  <Route path="dashboard" element={<Dashboard />} />
+                </Route>
 
                 {/* Catch all route - 404 */}
                 <Route
