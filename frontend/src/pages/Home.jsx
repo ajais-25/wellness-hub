@@ -2,24 +2,24 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       {/* Hero Section */}
-      <div className="text-center mb-16">
-        <h2 className="text-5xl font-bold text-gray-900 mb-4">
+      <div className="text-center mb-12 sm:mb-16">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
           Welcome to Your Wellness Journey
         </h2>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+        <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto mb-6 sm:mb-8 px-2 leading-relaxed">
           Create, share, and discover mindfulness sessions that promote mental
           health and well-being. Build a community of wellness through guided
           experiences.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-lg sm:max-w-none mx-auto">
           <Link
             to="/dashboard"
-            className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition duration-200 flex items-center justify-center space-x-2"
+            className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition duration-200 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5 sm:w-6 sm:h-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -35,10 +35,10 @@ const Home = () => {
           </Link>
           <Link
             to="/session-editor"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition duration-200 flex items-center justify-center space-x-2"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition duration-200 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5 sm:w-6 sm:h-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -56,12 +56,12 @@ const Home = () => {
       </div>
 
       {/* Feature Cards */}
-      <div className="grid md:grid-cols-3 gap-8 mb-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
         <Link to="/dashboard" className="group">
-          <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 group-hover:transform group-hover:-translate-y-1">
-            <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-purple-200 transition duration-300">
+          <div className="bg-white p-6 sm:p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 group-hover:transform group-hover:-translate-y-1 h-full">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-purple-200 transition duration-300">
               <svg
-                className="w-8 h-8 text-purple-600"
+                className="w-7 h-7 sm:w-8 sm:h-8 text-purple-600"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -74,22 +74,24 @@ const Home = () => {
                 />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Dashboard</h3>
-            <p className="text-gray-600 mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
+              Dashboard
+            </h3>
+            <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base leading-relaxed">
               View published wellness sessions from the community. Discover new
               mindfulness practices and guided experiences.
             </p>
-            <div className="text-purple-600 font-semibold group-hover:text-purple-700">
+            <div className="text-purple-600 font-semibold group-hover:text-purple-700 text-sm sm:text-base">
               Explore Sessions →
             </div>
           </div>
         </Link>
 
         <Link to="/my-sessions" className="group">
-          <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 group-hover:transform group-hover:-translate-y-1">
-            <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-emerald-200 transition duration-300">
+          <div className="bg-white p-6 sm:p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 group-hover:transform group-hover:-translate-y-1 h-full">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-emerald-100 rounded-lg flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-emerald-200 transition duration-300">
               <svg
-                className="w-8 h-8 text-emerald-600"
+                className="w-7 h-7 sm:w-8 sm:h-8 text-emerald-600"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -102,24 +104,27 @@ const Home = () => {
                 />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
               My Sessions
             </h3>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base leading-relaxed">
               View and edit your personal wellness sessions. Manage your drafts
               and published content in one place.
             </p>
-            <div className="text-emerald-600 font-semibold group-hover:text-emerald-700">
+            <div className="text-emerald-600 font-semibold group-hover:text-emerald-700 text-sm sm:text-base">
               Manage Sessions →
             </div>
           </div>
         </Link>
 
-        <Link to="/session-editor" className="group">
-          <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 group-hover:transform group-hover:-translate-y-1">
-            <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-200 transition duration-300">
+        <Link
+          to="/session-editor"
+          className="group sm:col-span-2 lg:col-span-1"
+        >
+          <div className="bg-white p-6 sm:p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 group-hover:transform group-hover:-translate-y-1 h-full">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-blue-200 transition duration-300">
               <svg
-                className="w-8 h-8 text-blue-600"
+                className="w-7 h-7 sm:w-8 sm:h-8 text-blue-600"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -132,14 +137,14 @@ const Home = () => {
                 />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
               Session Editor
             </h3>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base leading-relaxed">
               Create and edit wellness sessions with our intuitive form.
               Auto-save keeps your work safe as you create.
             </p>
-            <div className="text-blue-600 font-semibold group-hover:text-blue-700">
+            <div className="text-blue-600 font-semibold group-hover:text-blue-700 text-sm sm:text-base">
               Start Creating →
             </div>
           </div>
@@ -147,15 +152,15 @@ const Home = () => {
       </div>
 
       {/* Benefits Section */}
-      <div className="bg-white rounded-xl shadow-md p-12 text-center">
-        <h3 className="text-3xl font-bold text-gray-900 mb-6">
+      <div className="bg-white rounded-xl shadow-md p-6 sm:p-8 lg:p-12 text-center">
+        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
           Why Choose WellnessHub?
         </h3>
-        <div className="grid md:grid-cols-4 gap-8">
-          <div>
-            <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="flex flex-col items-center">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
               <svg
-                className="w-6 h-6 text-green-600"
+                className="w-6 h-6 sm:w-7 sm:h-7 text-green-600"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -168,15 +173,17 @@ const Home = () => {
                 />
               </svg>
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">Auto-Save</h4>
-            <p className="text-gray-600 text-sm">
+            <h4 className="font-semibold text-gray-900 mb-2 text-base sm:text-lg">
+              Auto-Save
+            </h4>
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
               Never lose your work with our automatic saving feature
             </p>
           </div>
-          <div>
-            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="flex flex-col items-center">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
               <svg
-                className="w-6 h-6 text-blue-600"
+                className="w-6 h-6 sm:w-7 sm:h-7 text-blue-600"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -189,15 +196,17 @@ const Home = () => {
                 />
               </svg>
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">Community</h4>
-            <p className="text-gray-600 text-sm">
+            <h4 className="font-semibold text-gray-900 mb-2 text-base sm:text-lg">
+              Community
+            </h4>
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
               Share and discover sessions from wellness enthusiasts
             </p>
           </div>
-          <div>
-            <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="flex flex-col items-center">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
               <svg
-                className="w-6 h-6 text-purple-600"
+                className="w-6 h-6 sm:w-7 sm:h-7 text-purple-600"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -210,15 +219,17 @@ const Home = () => {
                 />
               </svg>
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">Easy Tagging</h4>
-            <p className="text-gray-600 text-sm">
+            <h4 className="font-semibold text-gray-900 mb-2 text-base sm:text-lg">
+              Easy Tagging
+            </h4>
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
               Organize and discover content with smart tagging
             </p>
           </div>
-          <div>
-            <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="flex flex-col items-center">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
               <svg
-                className="w-6 h-6 text-yellow-600"
+                className="w-6 h-6 sm:w-7 sm:h-7 text-yellow-600"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -231,10 +242,10 @@ const Home = () => {
                 />
               </svg>
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">
+            <h4 className="font-semibold text-gray-900 mb-2 text-base sm:text-lg">
               Fast & Intuitive
             </h4>
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
               Clean, responsive interface that works on any device
             </p>
           </div>

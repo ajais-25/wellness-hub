@@ -154,10 +154,10 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-6 sm:space-y-8">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+          <h2 className="mt-4 sm:mt-6 text-center text-2xl sm:text-3xl font-extrabold text-gray-900">
             Sign in to your account
           </h2>{" "}
           <p className="mt-2 text-center text-sm text-gray-600">
@@ -172,11 +172,11 @@ const Login = () => {
         </div>
 
         {/* Server Notice */}
-        <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-          <div className="flex items-center">
+        <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 sm:p-4">
+          <div className="flex items-start sm:items-center">
             <div className="flex-shrink-0">
               <svg
-                className="h-5 w-5 text-amber-400"
+                className="h-5 w-5 text-amber-400 mt-0.5 sm:mt-0"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -188,7 +188,7 @@ const Login = () => {
               </svg>
             </div>
             <div className="ml-3">
-              <p className="text-sm text-amber-800">
+              <p className="text-xs sm:text-sm text-amber-800 leading-relaxed">
                 <strong>Please note:</strong> Our servers may take a moment to
                 start up if they've been inactive. Your login might take 30-60
                 seconds on the first attempt.
@@ -197,10 +197,13 @@ const Login = () => {
           </div>
         </div>
 
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-          <div className="bg-white rounded-lg shadow-md p-6 space-y-4">
+        <form
+          className="mt-6 sm:mt-8 space-y-4 sm:space-y-6"
+          onSubmit={handleSubmit}
+        >
+          <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 space-y-4">
             {errors.submit && (
-              <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-md text-sm">
+              <div className="bg-red-50 border border-red-200 text-red-600 px-3 sm:px-4 py-3 rounded-md text-xs sm:text-sm">
                 {errors.submit}
               </div>
             )}
@@ -217,15 +220,17 @@ const Login = () => {
                 type="email"
                 autoComplete="email"
                 required
-                className={`appearance-none relative block w-full px-3 py-2 border ${
+                className={`appearance-none relative block w-full px-3 py-2.5 sm:py-2 border ${
                   errors.email ? "border-red-300" : "border-gray-300"
-                } placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm transition duration-150 ease-in-out`}
+                } placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 text-sm sm:text-sm transition duration-150 ease-in-out`}
                 placeholder="Enter your email"
                 value={formData.email}
                 onChange={handleChange}
               />
               {errors.email && (
-                <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+                <p className="mt-1 text-xs sm:text-sm text-red-600">
+                  {errors.email}
+                </p>
               )}
             </div>
             <div>
@@ -241,18 +246,20 @@ const Login = () => {
                 type="password"
                 autoComplete="current-password"
                 required
-                className={`appearance-none relative block w-full px-3 py-2 border ${
+                className={`appearance-none relative block w-full px-3 py-2.5 sm:py-2 border ${
                   errors.password ? "border-red-300" : "border-gray-300"
-                } placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm transition duration-150 ease-in-out`}
+                } placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 text-sm sm:text-sm transition duration-150 ease-in-out`}
                 placeholder="Enter your password"
                 value={formData.password}
                 onChange={handleChange}
               />
               {errors.password && (
-                <p className="mt-1 text-sm text-red-600">{errors.password}</p>
+                <p className="mt-1 text-xs sm:text-sm text-red-600">
+                  {errors.password}
+                </p>
               )}
             </div>
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-2 sm:space-y-0">
               <div className="flex items-center">
                 <input
                   id="remember-me"
@@ -281,7 +288,7 @@ const Login = () => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed transition duration-150 ease-in-out cursor-pointer"
+                className="group relative w-full flex justify-center py-2.5 sm:py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed transition duration-150 ease-in-out cursor-pointer"
               >
                 {isLoading ? (
                   <>
@@ -326,7 +333,7 @@ const Login = () => {
                 type="button"
                 onClick={handleDemoLogin}
                 disabled={isLoading}
-                className="group relative w-full flex justify-center py-2 px-4 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed transition duration-150 ease-in-out cursor-pointer"
+                className="group relative w-full flex justify-center py-2.5 sm:py-2 px-4 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed transition duration-150 ease-in-out cursor-pointer"
               >
                 <svg
                   className="w-5 h-5 mr-2 text-gray-400"

@@ -54,19 +54,19 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+      <div className="mb-6 sm:mb-8">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
           Published Wellness Sessions
         </h1>
-        <p className="text-gray-600">
+        <p className="text-gray-600 text-sm sm:text-base">
           Explore wellness sessions shared by our community
         </p>
       </div>
 
       {/* Search and Filter Section */}
-      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-        <div className="flex flex-col lg:flex-row gap-4">
+      <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
+        <div className="flex flex-col sm:flex-row gap-4">
           <div className="flex-1">
             <label
               htmlFor="search"
@@ -80,10 +80,10 @@ const Dashboard = () => {
               placeholder="Search by title or tags..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              className="w-full px-3 sm:px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-sm sm:text-base"
             />
           </div>
-          <div className="lg:w-64">
+          <div className="sm:w-48 lg:w-64">
             <label
               htmlFor="tag-filter"
               className="block text-sm font-medium text-gray-700 mb-2"
@@ -94,7 +94,7 @@ const Dashboard = () => {
               id="tag-filter"
               value={selectedTag}
               onChange={(e) => setSelectedTag(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              className="w-full px-3 sm:px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-sm sm:text-base"
             >
               <option value="">All Tags</option>
               {allTags.map((tag) => (
@@ -168,28 +168,28 @@ const Dashboard = () => {
               </p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
               {filteredSessions.map((session) => (
                 <div
                   key={session._id}
-                  className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200"
+                  className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-1"
                 >
-                  <div className="p-6">
+                  <div className="p-4 sm:p-6">
                     <div className="flex items-start justify-between mb-3">
-                      <h3 className="text-xl font-semibold text-gray-900 line-clamp-2">
+                      <h3 className="text-lg sm:text-xl font-semibold text-gray-900 line-clamp-2 leading-tight">
                         {session.title}
                       </h3>
                     </div>
 
-                    <div className="mb-4">
-                      <p className="text-sm text-gray-600 mb-2">
+                    <div className="mb-3 sm:mb-4">
+                      <p className="text-xs sm:text-sm text-gray-600 mb-2">
                         Created: {formatDate(session.createdAt)}
                       </p>
                     </div>
 
                     {session.tags && session.tags.length > 0 && (
-                      <div className="mb-4">
-                        <div className="flex flex-wrap gap-2">
+                      <div className="mb-3 sm:mb-4">
+                        <div className="flex flex-wrap gap-1 sm:gap-2">
                           {session.tags.map((tag, index) => (
                             <span
                               key={index}
