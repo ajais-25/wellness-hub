@@ -1,9 +1,21 @@
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import api from "../api";
 
 const Navigation = () => {
   const { user, logout } = useAuth();
   const location = useLocation();
+
+  const handleLogout = async () => {
+    try {
+      await api.post("/users/logout");
+      logout(); // Clear user state in AuthContext
+      // Optionally redirect to home or login page after logout
+      window.location.href = "/";
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
+  };
 
   const isActive = (path) => {
     return location.pathname === path;
@@ -51,11 +63,9 @@ const Navigation = () => {
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <span className="text-gray-600">
-              Welcome, {user?.name || user?.username}
-            </span>
+            <span className="text-gray-600">Welcome, {user?.name}</span>
             <button
-              onClick={logout}
+              onClick={handleLogout}
               className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition duration-200 cursor-pointer"
             >
               Logout
