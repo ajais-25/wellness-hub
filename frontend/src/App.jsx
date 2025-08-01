@@ -9,6 +9,8 @@ const Login = lazy(() => import("./pages/Login"));
 const Register = lazy(() => import("./pages/Register"));
 const Home = lazy(() => import("./pages/Home"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
+const MySessions = lazy(() => import("./pages/MySessions"));
+const SessionEditor = lazy(() => import("./pages/SessionEditor"));
 
 function App() {
   return (
@@ -32,6 +34,12 @@ function App() {
                 <Route element={<Layout />}>
                   <Route index element={<Home />} />
                   <Route path="dashboard" element={<Dashboard />} />
+                  <Route path="my-sessions" element={<MySessions />} />
+                  <Route path="session-editor" element={<SessionEditor />} />
+                  <Route
+                    path="session-editor/:id"
+                    element={<SessionEditor />}
+                  />
                 </Route>
 
                 {/* Catch all route - 404 */}
