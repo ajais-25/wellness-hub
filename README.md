@@ -2,10 +2,7 @@
 
 A full-stack wellness session management platform built with React and Node.js. Create, share, and discover mindfulness practices and guided wellness experiences.
 
-## 🚀 Live Demo
-
-**Frontend:** [https://wellness-hub-frontend.onrender.com](https://wellness-hub-frontend.onrender.com)  
-**Backend API:** [https://wellness-hub-backend.onrender.com](https://wellness-hub-backend.onrender.com)
+## 🚀 Live Demo: [https://wellness-hub-phi.vercel.app](https://wellness-hub-phi.vercel.app)
 
 _Note: Hosted on free tier - servers may take 30-60 seconds to start up on first request._
 
@@ -111,7 +108,7 @@ Make sure MongoDB is running locally, or update the `MONGODB_URI` in your `.env`
 
 ### Base URL
 
-- Development: `http://localhost:5000/api/v1`
+- Development: `http://localhost:3000/api/v1`
 - Production: `https://wellness-hub-backend.onrender.com/api/v1`
 
 ### Authentication Endpoints
